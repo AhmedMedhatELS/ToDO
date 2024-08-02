@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "_LoginLayout";
+}
+
+@model User
+
+<!-- Login Header -->
+<h1 class="login-header">Register</h1>
+
+<!-- Pills navs -->
+<!-- Pills content -->
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form action="Register" method="post">
+
+            <!-- Name input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <input type="text" id="registerName" class="form-control" name="Name" value="@Model.Name" />
+                <label class="form-label" for="registerName">Name</label
+            </div>
+
+            <br />
+            <br />
+
+            <!-- Username input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+                <input type="text" id="registerUsername" class="form-control" name="UserName" value="@Model.UserName"  />
+                <label class="form-label" for="registerUsername">Username</label>
+            </div>
+
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <input type="email" id="registerEmail" class="form-control" name="Email" value="@Model.Email" />
+                <label class="form-label" for="registerEmail">Email</label>
+            </div>
+
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <input type="password" id="registerPassword" class="form-control" name="Password" value="@Model.Password" />
+                <label class="form-label" for="registerPassword">Password</label>
+            </div>
+
+            <!-- Repeat Password input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <input type="password" id="registerRepeatPassword" class="form-control" name="ConfirmPassword" value="@Model.ConfirmPassword" />
+                <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" 
+                       aria-describedby="registerCheckHelpText" required />
+                <label class="form-check-label" for="registerCheck">
+                    I have read and agree to the terms
+                </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="custom-btn mb-4">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Aready a member? <a href="/User/Login">Login</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Pills content -->

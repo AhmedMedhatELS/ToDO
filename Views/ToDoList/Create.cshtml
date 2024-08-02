@@ -1,0 +1,47 @@
+﻿@model ToDoItem
+
+
+<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="form-con">
+        <h1 class="card-header text-xl-center">Add New Task, @ViewData["Name"]</h1>
+<form action="Create" method="post">
+
+            <input type="hidden" name="UserId" value="@ViewData["ID"]" />
+
+    <div class="row">
+        <div class="col">
+            <label for="Title">Task Title</label>
+            <input type="text"
+                class="form-control border-5"
+                           name="Title"
+                           value="@Model.Title"
+                id="Title">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="col">
+              <label for="Deadline">Dead Line</label>
+              <input type="datetime-local"
+                  class="form-control border-5"
+                           name="Deadline"                           
+                  id="Deadline">
+                    <span asp-validation-for="Deadline" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+            <label for="Des" class="mt-3">Task Description</label>
+            <input type="text"
+                class="form-control border-5"
+                       name="Description"
+                       value="@Model.Description"
+                id="Des">
+                <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg mt-3">Save Task To Your List</button>
+        </div>
+            <div class="text-center">
+                <a href="/ToDoList/Index?id=@ViewData["ID"]" class="btn btn-primary btn-lg mt-3">Back To Your List</a>
+            </div>
+</form>
+</div>
+</div>
