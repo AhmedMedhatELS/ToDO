@@ -9,6 +9,7 @@ namespace ToDO.Controllers
     {
         ApplicationDbContext context = new ApplicationDbContext();
 
+        #region Main
         public IActionResult Index(int id)
         {
             var UserList = context.ToDoItems.Where(e => e.UserId == id).ToList();
@@ -18,6 +19,7 @@ namespace ToDO.Controllers
           
             return View(UserList);
         }
+        #endregion
 
         #region Add New Task
         public IActionResult Create(int UserId) 
